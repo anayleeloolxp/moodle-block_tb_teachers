@@ -1,0 +1,51 @@
+.block_tb_teachers .tb_teachers {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block_tb_teachers .tb_teachers .content_box {
+    text-align: center;
+}
+.block_tb_teachers .tb_teachers .content_box .content_title {
+    padding: 1.25rem 1.25rem 10px;
+    font-size: 45px;
+    font-weight: 700;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.block_tb_teachers .tb_teachers .content_box .content_des {
+    font-weight: 400;
+    font-size: 22px;
+    padding: 0 1.25rem;
+}
+.block_tb_teachers .tb_teachers .content_img img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1199px) {
+    .block_tb_teachers .tb_teachers .content_box .content_title {
+        font-size: 35px;
+        margin: 0 0 5px;
+    }
+    .block_tb_teachers .tb_teachers .content_box .content_des {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .block_tb_teachers .tb_teachers .content_box .content_title {
+        font-size: 25px;
+    }
+    .block_tb_teachers .tb_teachers .content_box .content_title {
+        padding: 10px;
+        margin: 0;
+    }
+    .block_tb_teachers .tb_teachers .content_box {
+        text-align: center;
+        margin: 10px auto;
+        border: 1px solid #eee;
+        max-width: 450px;
+        padding: 0;
+    }
+    .block_tb_teachers .tb_teachers .content_box .content_des {
+        padding: 0 15px 15px;
+    }
+}
