@@ -49,6 +49,8 @@ class block_tb_teachers extends block_base {
      */
     public function get_content() {
 
+        global $CFG;
+
         if ($this->content !== null) {
             return $this->content;
         }
@@ -63,7 +65,7 @@ class block_tb_teachers extends block_base {
         $options = array(
             'CURLOPT_RETURNTRANSFER' => true,
             'CURLOPT_HEADER' => false,
-            'CURLOPT_POST' => count($postdata),
+            'CURLOPT_POST' => 1,
         );
 
         if (!$output = $curl->post($url, $postdata, $options)) {
@@ -89,7 +91,7 @@ class block_tb_teachers extends block_base {
         $options = array(
             'CURLOPT_RETURNTRANSFER' => true,
             'CURLOPT_HEADER' => false,
-            'CURLOPT_POST' => count($postdata),
+            'CURLOPT_POST' => 1,
         );
 
         if (!$output = $curl->post($url, $postdata, $options)) {
