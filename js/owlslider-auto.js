@@ -6,7 +6,7 @@ require(["jquery"],function($) {
             loop: true,
             margin: 10,
             responsiveClass: true,
-            autoplay: false,
+            autoplay: true,
             responsive: {
                 0: {
                     items: 1,

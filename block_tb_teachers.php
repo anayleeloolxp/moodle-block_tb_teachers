@@ -106,11 +106,16 @@ class block_tb_teachers extends block_base {
             $resposedata->data->block_title = get_string('displayname', 'block_tb_teachers');
         }
         $this->title = $resposedata->data->block_title;
+        $autoslide = $resposedata->data->autoslide;
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owl.carousel.js'));
-        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owlslider.js'));
-
+        if($autoslide == 1){
+            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owlslider-auto.js'));
+        }else{
+            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owlslider.js'));
+        }
+        
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/css/owl.carousel.min.css'));
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/css/owl.theme.default.min.css'));
 
