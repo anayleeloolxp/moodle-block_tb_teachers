@@ -125,4 +125,3 @@ class admin_setting_configteachers extends admin_setting {
         return '<input type="hidden" size="' . $this->size . '" id="' . $this->get_id() . '" name="' . $this->get_full_name() . '" value="' . s($data) . '" />';
     }
 }
-?>
