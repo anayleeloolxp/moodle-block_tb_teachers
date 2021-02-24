@@ -69,29 +69,29 @@ class block_tb_teachers extends block_base {
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owl.carousel.js'));
-        if($autoslide == 1){
+        if ($autoslide == 1) {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owlslider-auto.js'));
-        }else{
+        } else {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owlslider.js'));
         }
-        
+
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/css/owl.carousel.min.css'));
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/css/owl.theme.default.min.css'));
 
         $this->content = new stdClass();
         $this->content->text = '<div class="tb_teachers owl-carousel owl-theme">';
 
-        foreach($mdata as $mdatasing){
+        foreach ($mdata as $mdatasing) {
             $this->content->text .= '<div id="teachers_box" class="teachers_box">';
 
             $this->content->text .= '<div class="teachers_img">';
             $this->content->text .= '<img src="' . $mdatasing->image . '"/>';
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '<div class="teachers_title">';
             $this->content->text .= $mdatasing->instructor_name;
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '<div class="teachers_pos">';
             $this->content->text .= $mdatasing->instructor_position;
             $this->content->text .= '</div>';
@@ -99,7 +99,7 @@ class block_tb_teachers extends block_base {
             $this->content->text .= '<div class="teachers_des">';
             $this->content->text .= $mdatasing->description;
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '</div>';
         }
 
@@ -127,7 +127,6 @@ class block_tb_teachers extends block_base {
     public function applicable_formats() {
         return array('all' => true);
     }
-    
 
     /**
      * Get settings from Leeloo

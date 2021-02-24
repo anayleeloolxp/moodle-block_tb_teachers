@@ -28,36 +28,44 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Fetch and Update Configration From L
  */
-function updateconfteachers(){
-    $leeloolxplicense = get_config('block_tb_teachers')->license;
-    
+function updateconfteachers() {
+    if (isset(get_config('block_tb_teachers')->license)) {
+        $leeloolxplicense = get_config('block_tb_teachers')->license;
+    } else {
+        return;
+    }
+
     $url = 'https://leeloolxp.com/api_moodle.php/?action=page_info';
-    $postdata = '&license_key=' . $leeloolxplicense;
+    $postdata = [
+        'license_key' => $leeloolxplicense,
+    ];
     $curl = new curl;
     $options = array(
         'CURLOPT_RETURNTRANSFER' => true,
         'CURLOPT_HEADER' => false,
-        'CURLOPT_POST' => 1,
+        'CURLOPT_POST' => count($postdata),
     );
     if (!$output = $curl->post($url, $postdata, $options)) {
-        
+        $falsevar = 0;
     }
     $infoleeloolxp = json_decode($output);
     if ($infoleeloolxp->status != 'false') {
         $leeloolxpurl = $infoleeloolxp->data->install_url;
     } else {
-        
+        $falsevar = 0;
     }
     $url = $leeloolxpurl . '/admin/Theme_setup/get_instructors_settings';
-    $postdata = '&license_key=' . $leeloolxplicense;
+    $postdata = [
+        'license_key' => $leeloolxplicense,
+    ];
     $curl = new curl;
     $options = array(
         'CURLOPT_RETURNTRANSFER' => true,
         'CURLOPT_HEADER' => false,
-        'CURLOPT_POST' => 1,
+        'CURLOPT_POST' => count($postdata),
     );
     if (!$output = $curl->post($url, $postdata, $options)) {
-        
+        $falsevar = 0;
     }
     set_config('settingsjson', base64_encode($output), 'block_tb_teachers');
 }
