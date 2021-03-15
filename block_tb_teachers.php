@@ -59,6 +59,15 @@ class block_tb_teachers extends block_base {
         $settingsjson = get_config('block_tb_teachers')->settingsjson;
 
         $resposedata = json_decode(base64_decode($settingsjson));
+
+        if (!isset($resposedata->data->instructors_settings)) {
+            $this->title = get_string('displayname', 'block_tb_teachers');
+            $this->content = new stdClass();
+            $this->content->text = '';
+            $this->content->footer = '';
+            return $this->content;
+        }
+
         $mdata = $resposedata->data->instructors_settings;
 
         if (empty($resposedata->data->block_title)) {
