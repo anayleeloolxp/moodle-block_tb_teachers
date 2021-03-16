@@ -25,6 +25,7 @@
 
 $string['pluginname'] = 'Leeloo LXP Teachers';
 $string['displayname'] = 'Leeloo LXP Teachers';
+$string['blocktitle'] = 'Leeloo LXP Teachers';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
 $string['tb_teachers:addinstance'] = 'Add a new Leeloo LXP Teachers block';
