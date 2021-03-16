@@ -27,5 +27,7 @@ $string['pluginname'] = 'Leeloo LXP Teachers';
 $string['displayname'] = 'Leeloo LXP Teachers';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
+$string['tb_teachers:addinstance'] = 'Add a new Leeloo LXP Teachers block';
+$string['tb_teachers:myaddinstance'] = 'Add a new Leeloo LXP Teachers block to Dashboard';
 
 $string['privacy:metadata'] = 'The Leeloo LXP Teachers (tb_teachers) block only shows information and does not store data itself.';
