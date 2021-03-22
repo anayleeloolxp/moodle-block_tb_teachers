@@ -19,6 +19,16 @@
 .block_tb_teachers .tb_teachers .content_img img {
     width: 100%;
 }
+.teachers_img {
+    float: left;
+    max-width: 30%;
+    margin-right: 30px;
+}
+.teachers_title {
+    font-weight: bold;
+    margin: 0 0 10px;
+    font-size: 17px;
+}
 
 @media only screen and (max-width: 1199px) {
     .block_tb_teachers .tb_teachers .content_box .content_title {
