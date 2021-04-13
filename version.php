@@ -30,4 +30,3 @@ $plugin->requires = 2018050800; // Requires this Moodle version.
 $plugin->component = 'block_tb_teachers'; // Full name of the plugin (used for diagnostics).
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '1.0.0';
-$plugin->cron = 60 * 5; // 5mins.
