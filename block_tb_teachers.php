@@ -61,7 +61,11 @@ class block_tb_teachers extends block_base {
         $resposedata = json_decode(base64_decode($settingsjson));
 
         if (!isset($resposedata->data->instructors_settings)) {
-            $this->title = get_string('displayname', 'block_tb_teachers');
+            if ($this->page->user_is_editing()) {
+                $this->title = get_string('displayname', 'block_tb_teachers');
+            } else {
+                $this->title = '';
+            }
             $this->content = new stdClass();
             $this->content->text = '';
             $this->content->footer = '';
@@ -71,7 +75,11 @@ class block_tb_teachers extends block_base {
         $mdata = $resposedata->data->instructors_settings;
 
         if (empty($resposedata->data->block_title)) {
-            $resposedata->data->block_title = get_string('displayname', 'block_tb_teachers');
+            if ($this->page->user_is_editing()) {
+                $resposedata->data->block_title = get_string('displayname', 'block_tb_teachers');
+            } else {
+                $resposedata->data->block_title = '';
+            }
         }
         $this->title = $resposedata->data->block_title;
         $autoslide = @$resposedata->data->autoslide;
