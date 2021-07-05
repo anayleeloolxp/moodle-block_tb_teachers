@@ -84,7 +84,7 @@ class block_tb_teachers extends block_base {
         $this->title = $resposedata->data->block_title;
         $autoslide = @$resposedata->data->autoslide;
 
-        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/jquery.min.js'));
+        $this->page->requires->jquery();
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owl.carousel.js'));
         if ($autoslide == 1) {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_teachers/js/owlslider-auto.js'));
