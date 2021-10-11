@@ -33,7 +33,7 @@ if ($ADMIN->fulltree) {
         get_string('license', 'block_tb_teachers'),
         0
     );
-    $setting->set_updatedcallback(block_tb_teachers_updateconf());
+    //$setting->set_updatedcallback(block_tb_teachers_updateconf());
     $settings->add($setting);
 
     $setting = new admin_setting_configteachers('block_tb_teachers/settingsjson', '', '', '', PARAM_RAW);
