@@ -35,6 +35,9 @@ function block_tb_teachers_updateconf() {
         return;
     }
 
+    global $CFG;
+    require_once($CFG->dirroot . '/lib/filelib.php');
+
     $url = 'https://leeloolxp.com/api_moodle.php/?action=page_info';
     $postdata = [
         'license_key' => $leeloolxplicense,
