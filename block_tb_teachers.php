@@ -79,7 +79,13 @@ class block_tb_teachers extends block_base {
                 $resposedata->data->block_title = '';
             }
         }
-        $this->title = $resposedata->data->block_title;
+
+        $summaryformatoptions = new stdClass();
+        $summaryformatoptions->noclean = false;
+        $summaryformatoptions->overflowdiv = false;
+        $summaryformatoptions->filter = true;
+
+        $this->title = format_text($resposedata->data->block_title, 1, $summaryformatoptions);
         $autoslide = @$resposedata->data->autoslide;
 
         $this->page->requires->jquery();
@@ -101,15 +107,15 @@ class block_tb_teachers extends block_base {
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="teachers_title">';
-            $this->content->text .= $mdatasing->instructor_name;
+            $this->content->text .= format_text($mdatasing->instructor_name, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="teachers_pos">';
-            $this->content->text .= $mdatasing->instructor_position;
+            $this->content->text .= format_text($mdatasing->instructor_position, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="teachers_des">';
-            $this->content->text .= $mdatasing->description;
+            $this->content->text .= format_text($mdatasing->description, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '</div>';
